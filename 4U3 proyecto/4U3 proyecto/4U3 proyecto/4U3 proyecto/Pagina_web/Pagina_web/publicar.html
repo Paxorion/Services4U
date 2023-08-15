@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios 4U</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+    <style>
+        /* Estilos del cuerpo y del header */
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            /* Gris claro */
+            color: #333;
+        }
+
+        header {
+            background-color: #3858d6;
+            /* Azul oscuro */
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            /* Asegura que el header se muestre sobre las tarjetas */
+        }
+
+        /* Estilos para el logo y el título */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .titulo-header {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitulo-header {
+            font-size: 18px;
+            margin: 0;
+            color: #ccc;
+        }
+
+        /* Estilos para la barra de búsqueda */
+        .buscador {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Alinea verticalmente el botón con el input */
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .buscador input {
+            border: none;
+            border-radius: 25px;
+            padding: 12px;
+            font-size: 16px;
+            width: 70%;
+            transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            background-color: #e0e0e0;
+            /* Gris claro */
+            color: #333;
+        }
+
+        .buscador input:focus {
+            width: 100%;
+            outline: none;
+            background-color: #d1d9e6;
+        }
+
+        .buscador button {
+            border: none;
+            border-radius: 0 25px 25px 0;
+            padding: 12px 24px;
+            background-color: #35495e;
+            /* Azul oscuro */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            outline: none;
+        }
+
+        .buscador button:hover {
+            background-color: #303f4d;
+            /* Azul oscuro más oscuro en el hover */
+        }
+
+        /* Estilos para las tarjetas de servicio */
+        .tarjeta-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            /* Gris claro */
+        }
+
+        .tarjeta {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            /* Gris claro */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin: 20px;
+            flex: 0 0 calc(30% - 40px);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tarjeta h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #35495e;
+        }
+
+        .tarjeta p {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .tarjeta ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .tarjeta ul li {
+            margin-right: 0.5rem;
+        }
+
+        .tarjeta img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #e0e0e0;
+            /* Gris claro */
+            border-radius: 50%;
+            margin-top: 10px;
+            object-fit: cover;
+        }
+
+        /* ... (otros estilos se mantienen iguales) ... */
+        /* ... (otros estilos) ... */
+
+        /* Estilos para el botón "Agregar mi servicio" */
+        .boton-agregar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: hsl(25, 83%, 53%);
+            /* Verde */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .boton-agregar:hover {
+            background-color: hsl(25, 68%, 41%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1 class="titulo-header">Services 4U</h1>
+            <p class="subtitulo-header">Explora nuestro catálogo de servicios profesionales</p>
+        </div>
+
+        <div class="buscador">
+            <input type="text" placeholder="Buscar servicios...">
+            <button style="background-color: #35495e;">Buscar</button>
+        </div>
+        <div class="agregar-servicio">
+            <a href="form.html" class="boton-agregar">Agregar mi servicio</a>
+        </div>
+    </header>
+
+    <div class="tarjeta-container" id="datos">
+        <!-- Aquí se mostrarán los datos de la API -->
+    </div>
+
+    <div id="mensaje">
+        <!-- Aquí se mostrará el mensaje de no resultados -->
+    </div>
+    <script>
+        const apiUrl = "http://localhost/4U3%20proyecto/4U3%20proyecto/4U3%20proyecto/4U3%20proyecto/Pagina_web/Pagina_web/SERVICES%204U/api/api.php";
+
+        async function cargarDatos() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const datosDiv = document.getElementById("datos");
+                mostrarDatos(data.formulario, datosDiv);
+            } catch (error) {
+                console.error("Error al cargar los datos:", error);
+            }
+        }
+
+        function mostrarDatos(data, container) {
+            container.innerHTML = "";
+
+            data.forEach(item => {
+                const card = document.createElement("div");
+                card.classList.add("tarjeta");
+
+                card.innerHTML = `
+                <h3>${item.nombreServicio}</h3>
+                <p><strong>Ubicación:</strong> ${item.ubicacion}</p>
+                <p><strong>Número de Celular:</strong> ${item.numeroCelular}</p>
+                <p><strong>Precio:</strong> ${item.precio}</p>
+                <p><strong>Descripción:</strong> ${item.descripcion}</p>
+                <p><strong>Fotos:</strong></p>
+                <ul>
+                    ${item.fotos.split(',').map(foto => `<li><img src="${foto}" alt="Foto"></li>`).join('')}
+                </ul>
+            `;
+
+                container.appendChild(card);
+            });
+        }
+
+        const btnBuscar = document.querySelector("button");
+        btnBuscar.addEventListener("click", async () => {
+            const busqueda = document.querySelector("input").value.toLowerCase();
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            const datosFiltrados = filtrarDatos(data.formulario, busqueda);
+            const datosDiv = document.getElementById("datos");
+            const mensajeDiv = document.getElementById("mensaje");
+
+            if (datosFiltrados.length === 0) {
+                mostrarMensaje("No se encontraron resultados.");
+                datosDiv.innerHTML = "";
+            } else {
+                mensajeDiv.innerHTML = "";
+                mostrarDatos(datosFiltrados, datosDiv);
+            }
+        });
+
+        function filtrarDatos(data, busqueda) {
+            return data.filter(item => item.nombreServicio.toLowerCase().includes(busqueda));
+        }
+
+        function mostrarMensaje(mensaje) {
+            const mensajeDiv = document.getElementById("mensaje");
+            mensajeDiv.innerHTML = `<p>${mensaje}</p>`;
+        }
+
+        cargarDatos();
+    </script>
+</body>
+
+</html>

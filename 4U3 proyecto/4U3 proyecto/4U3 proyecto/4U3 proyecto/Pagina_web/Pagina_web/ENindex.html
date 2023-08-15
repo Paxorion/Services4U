@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Login Services 4U</title>
+</head>
+<body onload="max()">
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Welcome!</h2>
+                <p>To join our community, please log in with your information.</p>
+                <input type="button" value="Log in" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Create a new account.</h2>
+                <div class="icons">
+
+                </div>
+                <p>Use your email to register.</p>
+                <form class="form" action="ENnewac.php" method="post">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Full name" name="nombre">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Email" name="email">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </label>
+                    <input type="submit" value="Sign up">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container-form login hide" >
+        <div class="information">
+            <div class="info-childs">
+                <h2>Welcome again!</h2>
+                <p>If you don't have an account yet, please register here.</p>
+                <input type="button" value="Sign up" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Log in</h2>
+                <div class="icons">
+                    
+                </div>
+                <p></p>
+                <form class="form" action="ENlogin.php" method="post">
+                    <input type="hidden" name="nombre" value="">
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Email" name="email">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </label>
+                    <input type="submit" value="Iniciar sesión ">
+                    <div class="texto">
+                        <a class="cambiarpass" href="cambiarpasswd.html"> "Forgot your password?</a>
+                        <a class="eliminarcuenta" href="eliminarc.html">Delete my account</a>
+                        
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

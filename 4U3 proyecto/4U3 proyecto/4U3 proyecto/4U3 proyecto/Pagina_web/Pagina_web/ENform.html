@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Servicio</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fafafe;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #000000;
+            padding: 1rem;
+            /* Añade un poco de espacio alrededor del título */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            margin-top: 80px;
+            /* Agrega un margen superior para separar del formulario */
+        }
+
+        form {
+            background-color: #0923ea;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            /* Modifica el margen superior para ajustar el espacio entre el formulario y el título */
+            margin-bottom: 30px;
+            /* Agrega un margen inferior al formulario */
+        }
+
+
+        label {
+            display: block;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            background-color: #e3ebe3;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+
+        }
+
+        input[type="submit"] {
+            background-color: #f1c40f;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fff;
+            color: #f1c40f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Insert your service</h2>
+
+    <form action="form.php" method="POST" enctype="multipart/form-data" id="miFormulario">
+        <label for="nombre">Service name:</label>
+        <input type="text" id="nombre" name="nombreServicio" required>
+        
+        <label for="fotos">Photos:</label>
+        <label for="fotos" class="file-label" style="background-color: #e97019; color: #fff;">Select photos.</label>
+        <input type="file" id="fotos" name="fotos[]" accept="image/*" multiple>
+
+        <label for="locacion">Location:</label>
+        <input type="text" id="locacion" name="ubicacion" required>
+
+        <label for="celular">Cell phone number:</label>
+        <input type="tel" id="celular" name="numeroCelular" pattern="[0-9]{10}" required>
+
+        <label for="precio">Price:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required>
+
+        <label for="descripcion">Description:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea>
+
+        <input type="submit" value="Send" style="background-color: #e97019; color: #f8f8f8;">
+    </form>
+
+</body>
+
+</html>
